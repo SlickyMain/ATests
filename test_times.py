@@ -1,19 +1,10 @@
 import unittest
 import pytest
 from selenium.webdriver.support.ui import WebDriverWait as WWait
-from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 import math
-
-
-@pytest.fixture(scope="session")
-def browser():
-    browser = WebDriver()
-    yield browser
-    browser.quit()
-    print(keke)
 
 
 keke = []
@@ -35,9 +26,6 @@ def test_something(browser, link):
         not_right = browser.find_element_by_class_name("smart-hints__hint")
         keke.append(not_right.text)
         return keke
-
-
-
 
 
 if __name__ == '__main__':
